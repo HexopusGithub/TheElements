@@ -1,0 +1,151 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Ui/Inventory.gd" type="Script" id=1]
+[ext_resource path="res://Ui/InventorySlot.tscn" type="PackedScene" id=2]
+
+[node name="Inventory" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 101.111
+margin_top = -249.668
+margin_right = 302.111
+margin_bottom = -235.668
+rect_scale = Vector2( 1.8, 1.8 )
+text = "Air: 0   Ice: 0   Earth: 0   Fire: 0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CraftingUI" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="CraftingUI"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="NewCore1" type="Button" parent="CraftingUI/Buttons"]
+margin_left = 155.592
+margin_top = -207.143
+margin_right = 201.592
+margin_bottom = -167.143
+shortcut_in_tooltip = false
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewCore2" type="Button" parent="CraftingUI/Buttons"]
+margin_left = 249.879
+margin_top = -207.143
+margin_right = 295.879
+margin_bottom = -167.143
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewCore3" type="Button" parent="CraftingUI/Buttons"]
+margin_left = 345.288
+margin_top = -207.143
+margin_right = 391.288
+margin_bottom = -167.143
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewCore4" type="Button" parent="CraftingUI/Buttons"]
+margin_left = 439.575
+margin_top = -207.143
+margin_right = 485.575
+margin_bottom = -167.143
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="CraftingUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -238.0
+margin_top = -105.326
+margin_right = 498.0
+margin_bottom = 186.674
+columns = 10
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CraftButton" type="Button" parent="CraftingUI"]
+margin_left = 290.714
+margin_top = 40.0
+margin_right = 370.714
+margin_bottom = 110.0
+shortcut_in_tooltip = false
+text = "Craft"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CraftingSlot1" parent="CraftingUI" instance=ExtResource( 2 )]
+margin_left = 201.592
+margin_top = 40.0
+margin_right = 271.592
+margin_bottom = 110.0
+inventory_item = false
+
+[node name="CraftingSlot2" parent="CraftingUI" instance=ExtResource( 2 )]
+margin_left = 389.043
+margin_top = 40.0
+margin_right = 459.043
+margin_bottom = 110.0
+inventory_item = false
+
+[node name="CraftingSlot3" parent="CraftingUI" instance=ExtResource( 2 )]
+margin_left = 295.879
+margin_top = -48.8021
+margin_right = 365.879
+margin_bottom = 21.1979
+inventory_item = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -258.0
+margin_top = 197.0
+margin_right = 478.0
+margin_bottom = 267.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CraftingUI/Buttons/NewCore1" to="." method="_on_NewCore1_pressed"]
+[connection signal="pressed" from="CraftingUI/Buttons/NewCore2" to="." method="_on_NewCore2_pressed"]
+[connection signal="pressed" from="CraftingUI/Buttons/NewCore3" to="." method="_on_NewCore3_pressed"]
+[connection signal="pressed" from="CraftingUI/Buttons/NewCore4" to="." method="_on_NewCore4_pressed"]
+[connection signal="pressed" from="CraftingUI/CraftButton" to="." method="_on_CraftButton_pressed"]

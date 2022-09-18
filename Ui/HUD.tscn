@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Ui/HUD.gd" type="Script" id=1]
+[ext_resource path="res://Art/HUD/Health/EmptyHealthBar.png" type="Texture" id=2]
+[ext_resource path="res://Art/HUD/Health/HealthPoint.png" type="Texture" id=3]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0, 0, 0, 0.262745, 1, 1, 1, 0.231373 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FogSprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 511.312, 300.591 )
+rotation = -1.5708
+scale = Vector2( 0.294008, 1022.19 )
+z_index = 1
+texture = SubResource( 2 )
+
+[node name="TopLeftCorner" type="Container" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="Sprite" parent="TopLeftCorner"]
+position = Vector2( 259.754, 42.8059 )
+scale = Vector2( 3.75501, 3.75501 )
+z_index = 10
+texture = ExtResource( 2 )
+
+[node name="HealthPoint1" type="AnimatedSprite" parent="TopLeftCorner/HealthBar"]
+position = Vector2( -57.4967, 0.999513 )
+frames = SubResource( 3 )
+
+[node name="HealthPoint2" type="AnimatedSprite" parent="TopLeftCorner/HealthBar"]
+position = Vector2( -44.496, 0.998271 )
+frames = SubResource( 3 )
+
+[node name="HealthPoint3" type="AnimatedSprite" parent="TopLeftCorner/HealthBar"]
+position = Vector2( -31.5, 1.00075 )
+frames = SubResource( 3 )
+
+[node name="HealthPoint4" type="AnimatedSprite" parent="TopLeftCorner/HealthBar"]
+position = Vector2( -18.4993, 0.999513 )
+frames = SubResource( 3 )
+
+[node name="HealthPoint5" type="AnimatedSprite" parent="TopLeftCorner/HealthBar"]
+position = Vector2( -5.50006, 0.999513 )
+frames = SubResource( 3 )
+
+[node name="HealthPoint6" type="AnimatedSprite" parent="TopLeftCorner/HealthBar"]
+position = Vector2( 7.50066, 0.998271 )
+frames = SubResource( 3 )
+
+[node name="HealthPoint7" type="AnimatedSprite" parent="TopLeftCorner/HealthBar"]
+position = Vector2( 20.4966, 1.00075 )
+frames = SubResource( 3 )
+
+[node name="HealthPoint8" type="AnimatedSprite" parent="TopLeftCorner/HealthBar"]
+position = Vector2( 33.4974, 0.999513 )
+frames = SubResource( 3 )
+
+[node name="HealthPoint9" type="AnimatedSprite" parent="TopLeftCorner/HealthBar"]
+position = Vector2( 46.5087, 1.002 )
+frames = SubResource( 3 )
+
+[node name="HealthPoint10" type="AnimatedSprite" parent="TopLeftCorner/HealthBar"]
+position = Vector2( 59.5094, 1.00075 )
+frames = SubResource( 3 )
